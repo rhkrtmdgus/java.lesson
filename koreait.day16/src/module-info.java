@@ -1,0 +1,2 @@
+module koreait.day16 {
+}
