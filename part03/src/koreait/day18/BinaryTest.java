@@ -8,6 +8,8 @@ public class BinaryTest {
 		for (int i = 0; i < 100; i++) {
 			System.out.println(String.format("%d\t%s\t %s", i, Integer.toBinaryString(i),
 										Integer.toHexString(i)));
+			
+			
 		}
 		
 	}

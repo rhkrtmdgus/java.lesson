@@ -50,7 +50,7 @@ public class sudokui {
 					
 			}
 				
-				
+				//wddwwd
 			for (int mmv = 0; mmv < 9; mmv++) {
 				for (int mmv2 = 0; mmv2 < 9; mmv2++) {
 					if(adw[mmv][mmv2] == " ") {
