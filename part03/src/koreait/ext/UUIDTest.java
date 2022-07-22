@@ -1,6 +1,14 @@
 package koreait.ext;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import java.util.UUID;
+
+import com.google.common.hash.Hashing;
+
+
+
+
 
 public class UUIDTest {
 
@@ -22,6 +30,27 @@ public class UUIDTest {
 			uuid = UUID.randomUUID().toString();
 			System.out.println(uuid.replace("-", "").substring(0,12));
 		}
+		
+		
+		/*
+		 * google guava 라이브러리에서 제공하는 sha256 해싱 함수 사용
+		 */
+		
+		String password;
+		
+		String sha256 = Hashing.sha256().hashString("test#12", StandardCharsets.UTF_8)
+				.toString();  // 서버에 저장된 값이라고 생각하기
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("암호 입력하세요. >>>> ");
+		String you = sc.nextLine();
+		password = Hashing.sha256().hashString(you, StandardCharsets.UTF_8)
+				.toString();
+		
+		if(sha256.equals(password))
+			System.out.println("암호가 일치합니다.");
+		else
+			System.out.println("암호가 일치하지 않습니다.");
 		
 	}
 
